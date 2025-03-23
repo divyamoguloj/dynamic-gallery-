@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic and Assignment Operations</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        #output {
+            font-size: 18px;
+            line-height: 1.6;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <h2>Output:</h2>
+    <div id="output"></div>
+
+    <script>
+        let output = "";
+
+        let x = 5;
+        output += "Initial value of x: " + x + "<br>";
+
+        let y = x + 5;
+        output += "(x + 5): " + y + "<br>";
+
+        y -= 3;
+        output += "(y -= 3): " + y + "<br>";
+
+        y *= 2;
+        output += "(y *= 2): " + y + "<br>";
+
+        y /= 4;
+        output += "(y /= 4): " + y + "<br>";
+
+        y **= 2;
+        output += "(y **= 2): " + y + "<br>";
+
+        y %= 6;
+        output += "(y %= 6): " + y + "<br>";
+
+        output += "(x * 3): " + (x * 3) + "<br>";
+        output += "(x / 2): " + (x / 2) + "<br>";
+        output += "(x % 2): " + (x % 2) + "<br>";
+        output += "(x ** 3): " + (x ** 3) + "<br>";
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

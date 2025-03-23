@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Works Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      margin-bottom: 20px;
+    }
+
+    .projects button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .projects button:hover {
+      background-color: #0056b3;
+    }
+
+    .line {
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid black;
+    }
+
+    .body-content {
+      margin-top: 30px;
+    }
+
+    .body-content p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Class Works</h1>
+
+  <div class="projects">
+    <button onclick="changeColor('pink', 'lightpink')">Project 1</button>
+    <button onclick="changeColor('green', 'lightgreen')">Project 2</button>
+    <button onclick="changeColor('purple', 'lavender')">Project 3</button>
+  </div>
+
+  <div class="line" id="line"></div>
+
+  <div class="body-content">
+    <p id="instruction">Click a project below to display it here:</p>
+  </div>
+
+  <script>
+    function changeColor(bodyColor, titleColor) {
+      document.getElementById('line').style.display = 'none';
+      document.getElementById('instruction').style.display = 'none';
+      document.body.style.backgroundColor = bodyColor;
+      document.getElementById('title').style.color = titleColor;
+    }
+  </script>
+
+</body>
+</html>

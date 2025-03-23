@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page Home & Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            transition: background-color 0.3s ease;
+        }
+
+        .section {
+            display: none;
+            padding: 40px 20px;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* HOME SECTION STYLING */
+        #homeSection {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        #homeSection .heading {
+            text-align: center;
+            background-color: #e3f2fd;
+            padding: 30px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        #homeSection .heading h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #007BFF;
+        }
+
+        .content-body {
+            max-width: 900px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .mybutton {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .mybutton button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .mybutton button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* DASHBOARD SECTION STYLING */
+        #dashboardSection {
+            background-color: #111;
+            color: #fff;
+        }
+
+        #dashboardSection .heading {
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 2px solid #444;
+        }
+
+        #dashboardSection .heading h1 {
+            color: #00FFCC;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        #dashboardSection .heading h3 {
+            font-weight: normal;
+            color: #ccc;
+        }
+
+        #dashboardSection .content-body {
+            max-width: 800px;
+            margin: auto;
+            padding-top: 20px;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        #dashboardSection .mybutton button {
+            background-color: #00FFCC;
+            color: #000;
+        }
+
+        #dashboardSection .mybutton button:hover {
+            background-color: #00c7a4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME SECTION -->
+    <div id="homeSection" class="section active">
+        <div class="heading">
+            <h1>Welcome to My Custom Designed Page!</h1>
+        </div>
+
+        <div class="content-body">
+            <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+                literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum
+                comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+                Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            </p>
+        </div>
+
+        <div class="mybutton">
+            <button onclick="showSection('dashboardSection')">Click here to see the Dashboard</button>
+        </div>
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div id="dashboardSection" class="section">
+        <div class="heading">
+            <h1>Welcome to Custom Dashboard</h1>
+            <h3>It doesn't have any functions yet!</h3>
+        </div>
+
+        <div class="content-body">
+            <p>This space will soon be filled with interactive dashboard features, analytics, and more.</p>
+        </div>
+
+        <div class="mybutton">
+            <button onclick="showSection('homeSection')">Click here to return to Home</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to Toggle Sections -->
+    <script>
+        function showSection(sectionId) {
+            document.getElementById("homeSection").classList.remove("active");
+            document.getElementById("dashboardSection").classList.remove("active");
+
+            document.getElementById(sectionId).classList.add("active");
+        }
+    </script>
+
+</body>
+
+</html>

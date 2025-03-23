@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function toUpperCase() {
+            let nameInput = document.getElementById("input");
+            let nameDisabledInput = document.getElementById("output");
+            nameDisabledInput.value = nameInput.value.toUpperCase();
+            }
+        </script>
+    </head>
+
+    <body>
+        <input type="text" id="input" onkeyup="toUpperCase();" placeholder="Enter text here"/>
+        <input type="text" id="output" disabled placeholder="OUTPUT WILL BE GENERATED HERE"/>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task 12-1 & Index 3 Combined</title>
+</head>
+<body>
+    <h2>Task 12-1</h2>
+    <button onclick="show_person_info();">Show Static Info</button>
+    <div id="static_info"></div>
+
+    <hr>
+
+    <h2>Index 3 - Insert & Show Info</h2>
+    <div>
+        <input id="name" placeholder="Enter name" />
+        <input id="age" placeholder="Enter age" />
+        <input id="dob" placeholder="Enter DOB" />
+        <input id="school" placeholder="Enter school" />
+    </div>
+    <button onclick="insert();">Insert Info</button>
+    <button onclick="show_personal_info();">Show Info</button>
+    <div id="dynamic_info"></div>
+
+    <script>
+        const person = {
+            name: "Divya",
+            age: "25",
+            dob: "07/16/2000",
+            school: "AUM",
+            description: function() {
+                return "This is " + this.name + ", age " + this.age + ", born on " + this.dob + ", and studied at " + this.school + " school.";
+            }
+        };
+
+        function show_person_info() {
+            document.getElementById("static_info").innerHTML = person.description();
+        }
+
+        let people = [];
+
+        function insert() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let dob = document.getElementById("dob").value;
+            let school = document.getElementById("school").value;
+
+            let newPerson = {
+                name: name,
+                age: age,
+                dob: dob,
+                school: school,
+                description: function() {
+                    return `Name: ${this.name}, Age: ${this.age}, DOB: ${this.dob}, School: ${this.school}`;
+                }
+            };
+
+            people.push(newPerson);
+
+            document.getElementById("name").value = '';
+            document.getElementById("age").value = '';
+            document.getElementById("dob").value = '';
+            document.getElementById("school").value = '';
+        }
+
+        function show_personal_info() {
+            let output = "";
+            people.forEach(person => {
+                output += person.description() + "<br>";
+            });
+            document.getElementById("dynamic_info").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

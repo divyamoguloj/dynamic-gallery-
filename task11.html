@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combined Task</title>
+</head>
+<body>
+
+    <!-- Input for Star Pattern Size -->
+    <input id="user_input" placeholder="Enter Size for Star Pattern" onkeyup="generate_shape();" />
+    <div id="content_div"></div>
+
+    <br><br>
+
+    <!-- Input for Sum Calculation -->
+    <h1>Sum Between Two Numbers</h1>
+    <label for="a">Enter a:</label>
+    <input type="text" id="a">
+    <br><br>
+    
+    <label for="b">Enter b:</label>
+    <input type="text" id="b">
+    <br><br>
+    
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p id="sum_result"></p>
+
+    <br><br>
+
+    <!-- While Loop Output -->
+    <h2>While Loop Output:</h2>
+    <div id="output"></div>
+
+    <script>
+        // Star Pattern with Color Change
+        let colors = ["red", "blue", "green", "orange"];
+        let idx = 0;
+        let size = colors.length;
+
+        function generate_shape() {
+            let n = parseInt(document.getElementById("user_input").value);
+            let text = "";
+            for (let i = 0; i <= n; i++) {
+                for (let j = 0; j < i; j++) {
+                    text += "$ ";
+                }
+                text += "<br>";
+            }
+            document.getElementById("content_div").innerHTML = text;
+            document.getElementById("content_div").style.color = colors[idx];
+            idx = (idx + 1) % size;
+        }
+
+        // While Loop Example
+        let while_text = "", i = 1;
+        while (i <= 5) while_text += i++ + " ";
+        document.getElementById('output').innerText = while_text;
+
+        // Sum Between Two Numbers
+        function calculateSum() {
+            let a = parseInt(document.getElementById('a').value);
+            let b = parseInt(document.getElementById('b').value);
+            let sum = 0;
+            
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById('sum_result').innerText = 'Please enter valid numbers.';
+                return;
+            }
+
+            for (let i = a; i <= b; i++) {
+                sum += i;
+            }
+            document.getElementById('sum_result').innerText = 'Sum = ' + sum;
+        }
+    </script>
+
+</body>
+</html>

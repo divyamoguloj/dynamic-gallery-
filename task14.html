@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="container_div">
+        <input placeholder="Enter A" id="input_a"/>
+        <input placeholder="Enter B" id="input_b"/>
+        <button onclick="generate_random_value();">generate_random_value</button>
+        <div id = "output_div"></div>
+        </div>
+        
+        <script>
+            let colors = ["red", "green", "blue", "yellow", "purple"];
+
+            function generate_random_value(){
+                let a = parseInt(document.getElementById("input_a").value);
+                let b = parseInt(document.getElementById("input_b").value);
+
+                let random_value = Math.floor((b - a ) * Math.random());
+                document.getElementById("output_div").innerHTML = random_value;
+
+                let size = colors.length;
+                let idx = Math.floor(Math.random() * size);
+                document.getElementById("output_div").style = "color:" + colors[idx];
+            }
+
+            function remove_everything(){
+                document.getElementById("container_div").innerHTML = "vanished!";
+            }
+            
+            setTimeout(remove_everything,3000);
+        </script>
+    </body>
+</html>
